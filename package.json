@@ -1,0 +1,59 @@
+{
+  "name": "diff-serving",
+  "version": "1.0.0",
+  "description": "A toy app demonstrating how to do differential serving step by step with git tags.",
+  "main": "server.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && npm run css && NODE_ENV=production npx webpack --progress && npm run copy-images",
+    "build:dev": "npm run clean && npm run css:dev && NODE_ENV=development npx webpack --progress && npm run copy-images",
+    "css": "NODE_ENV=production npx postcss ./src/client/Styles/Styles.css -o ./dist/client/css/styles.css",
+    "css:dev": "NODE_ENV=development npx postcss ./src/client/Styles/Styles.css -o ./dist/client/css/styles.css",
+    "copy-images": "cp -Rf ./src/client/images ./dist/client/images",
+    "server": "NODE_ENV=production node ./dist/server/server.js",
+    "start": "npm run build && npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malchata/diff-serving.git"
+  },
+  "keywords": [
+    "differential serving",
+    "ES6",
+    "ES6",
+    "webpack"
+  ],
+  "author": "Jeremy L. Wagner <jeremy.l.wagner@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malchata/diff-serving/issues"
+  },
+  "homepage": "https://github.com/malchata/diff-serving#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "compression": "^1.7.4",
+    "core-js": "^3.7.0",
+    "express": "^4.17.1",
+    "preact": "^10.5.5",
+    "preact-render-to-string": "^5.1.11",
+    "preact-router": "^3.2.1",
+    "whatwg-fetch": "^3.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "assets-webpack-plugin": "^6.0.3",
+    "autoprefixer": "^10.0.1",
+    "babel-loader": "^8.1.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.13.0",
+    "eslint-plugin-react": "^7.21.5",
+    "postcss-cli": "^8.2.0",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
