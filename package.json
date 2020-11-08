@@ -36,8 +36,7 @@
     "express": "^4.17.1",
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
-    "preact-router": "^3.2.1",
-    "whatwg-fetch": "^3.5.0"
+    "preact-router": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
